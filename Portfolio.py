@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 from streamlit_lottie import st_lottie
+import pandas as pd
 
 st.set_page_config(page_title="W kh", page_icon="coding.png", layout="wide")
 
@@ -32,11 +33,9 @@ with st.container():
         st.header("About me")
         st.write("##")
         st.write("""
-        I'm named Wassim Khachab , i'm from morocco , last 3 years i've been focusing on programming and web development and that's been fun , laterly i tried to learn blockchain development , so i have created a digital coin "Glasses coin" (A DECENTRALIZED TOKEN FOCUSED ON REVOLUTIONIZING WEB 3.0) also i dived in the NFT field , and by my programming background , i can generate a full NFT collection , create a minting dapp and create also smart contracts, in my path i faced some hurdles or challenges , one of them is the bad wifi connection :) and also my young age because in many times i needed at least an Identification card , however i'm trying to use my cryptocurrency wallet always as a payment method 
-        three Specifications that i always respect:
-        - never give up
-        - learn 
-        - respect time
+        - I have been working as a web developer for the past 3 years, with a focus on building responsive and user-friendly websites using HTML, CSS, and JavaScript. I also have experience with popular web development frameworks such as Angular and React, which I use to create dynamic and interactive web applications
+        - I have experience working with a variety of programming languages, including Python, Java, ... I have developed software applications for a wide range of industries
+        - I am always seeking to learn new technologies and stay up to date with the latest industry trends. I am confident in my ability to deliver high-quality and reliable software and web solutions for any project.
         """)
     with right_column:
         st_lottie(lottie_coding)
@@ -47,21 +46,13 @@ with st.container():
     st.write("---")
     st.header("Skills")
     st.write("##")
-    st.write("""
-    - Programming 
+    data = {"language":["Html", "Css", "Javascript", "Python", "Java"], "rate":[5,4,3,5,3]}
 
-    - Coding
+    data=pd.DataFrame(data)
 
-    - Web development 
+    data = data.set_index("language")
 
-    - Game development
-
-    - NFT 
-
-    - Blockchain development
-
-
-    """)
+    st.bar_chart(data)
 
 # ------ Contact form -------
 
